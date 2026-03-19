@@ -1,0 +1,5 @@
+user_id,restaurant_id,rating,cuisine,price
+1,101,4,North Indian,300
+1,102,5,Chinese,200
+2,101,3,North Indian,300
+2,103,4,Italian,500
