@@ -1,0 +1,11 @@
+from scipy.sparse import csr_matrix
+from implicit.als import AlternatingLeastSquares
+
+def train_model(user_item):
+    sparse_matrix = csr_matrix(user_item.values)
+    model = AlternatingLeastSquares(factors=50, iterations=10)
+    model.fit(sparse_matrix)
+    return model
+
+def recommend(model, user_item, user_id):
+    return model.recommend(user_id, csr_matrix(user_item.values)[user_id], N=5)
